@@ -1,0 +1,275 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.home {
+	background-color: #fdfdff;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+
+	.chat-list {
+		height: 100vh;
+		flex: 1;
+		background: white;
+		.chatlist-header {
+			position: relative;
+			height: 10vh;
+			width: 100%;
+			border: none;
+			background: transparent linear-gradient(268deg, #7a1deb 0%, #423791 100%)
+				0% 0%;
+			position: relative;
+			color: white;
+
+			ul {
+				display: flex;
+				justify-content: space-between;
+				list-style: none;
+
+				li .app-logo {
+					height: 50px;
+					border-radius: 50%;
+					margin-top: 5px;
+					padding: 0px 10px;
+				}
+
+				li .icons {
+					display: flex;
+					gap: 40px;
+					font-size: 25px;
+					color: white;
+					//#423791   #7a1deb;
+					cursor: pointer;
+				}
+				.menu-icon {
+					position: relative;
+				}
+				.menu {
+					position: absolute;
+					z-index: 3;
+					top: 90%;
+					right: 5%;
+					max-height: fit-content;
+					width: 100px;
+					background-color: white;
+					border: 1px solid;
+					display: flex;
+					flex-direction: column;
+					animation: opening 0.2s ease-in;
+					box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+					border-radius: 2px;
+					button {
+						font-size: 15px;
+						font-weight: 600;
+						width: 90%;
+						margin: 5px;
+						padding: 2px;
+					}
+
+					button:hover {
+						color: #7a1deb;
+					}
+				}
+			}
+
+			.profile {
+				position: absolute;
+				top: 0%;
+				z-index: 3;
+				margin: 0;
+				padding: 0;
+				height: 100vh;
+				min-width: 100%;
+
+				backdrop-filter: blur(50px);
+				background: linear-gradient(to top, #000046, #1cb5e0);
+				animation: slide-in 0.3s ease-in-out;
+
+				.profile-header {
+					display: flex;
+					align-items: center;
+					height: 10%;
+					gap: 2rem;
+					padding: 10px;
+					font-size: 18px;
+					color: white;
+					cursor: pointer;
+				}
+				.profile-body {
+					color: black;
+					display: flex;
+					flex-direction: column;
+					text-align: center;
+					gap: 20px;
+					img {
+						text-align: center;
+						width: 200px;
+						object-fit: contain;
+						border-radius: 50%;
+					}
+					.name {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						background-color: rgba(255, 255, 255, 0.6);
+						height: 10vh;
+						width: 80%;
+						border-radius: 0px 50px 50px 0px;
+						padding-top: 8px;
+						h4 {
+							text-align: center;
+							margin: 2px;
+						}
+					}
+				}
+			}
+		}
+		.searchForm {
+			margin: 5px 0px 10px 10px;
+			padding: 0px;
+			width: 90%;
+			text-align: center;
+			position: relative;
+			display: flex;
+			align-items: center;
+			background-color: rgb(240, 239, 239);
+			border-radius: 10px;
+			input {
+				background-color: rgb(240, 239, 239);
+				margin-left: 10px;
+				padding: 10px;
+				font-size: 16px;
+				font-weight: bolder;
+				outline-color: transparent;
+				border: none;
+				outline: none;
+				border-radius: 10px;
+			}
+			span {
+				text-align: center;
+				padding: 0px 0px 0px 20px;
+				color: gray;
+			}
+		}
+	}
+
+	.messages-side {
+		height: 100vh;
+		flex: 2;
+		box-sizing: border-box;
+		.empty-chat {
+			height: 100%;
+			width: 100%;
+			background: linear-gradient(to right, #8e2de2, #4a00e0);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+			padding: 150px;
+			img {
+				width: 100%;
+			}
+			.snist-logo {
+				width: 50%;
+			}
+		}
+	}
+}
+
+.conversations {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	height: 80vh;
+	overflow: scroll;
+}
+
+.conversation {
+	display: flex;
+	height: 60px;
+	width: 95%;
+	cursor: pointer;
+	border-radius: 10px;
+	padding: 10px;
+	margin-left: 10px;
+	margin-top: 2px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+	background-color: white;
+
+	.user-left {
+		flex: 3;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 10px;
+		img {
+			width: 50px;
+			border-radius: 50%;
+		}
+	}
+
+	.user-right {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		padding-right: 10px;
+	}
+}
+
+.home::-webkit-scrollbar {
+	display: none;
+}
+@keyframes profile {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes opening {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 5px !important;
+	height: 1px !important;
+}
+::-webkit-scrollbar-thumb {
+	height: 10px !important;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-track {
+	background: hsla(0, 0%, 100%, 0.1);
+}
+
+@keyframes slide-in {
+	from {
+		transform: translateX(-450px);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slide-out {
+	from {
+		transform: translateX(0);
+		to {
+			transform: translateX(-450px);
+		}
+	}
+}
