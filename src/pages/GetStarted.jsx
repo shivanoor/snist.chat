@@ -128,7 +128,7 @@ export const GetStarted = () => {
 
 			<footer>
 				<span>
-					All Rights Reserved &copy; <a href="snistchat.com">snistchat.com</a>
+					All Rights Reserved &copy; <a href="https://snistchat.netlify.app">snistchat.netlify.app</a>
 				</span>
 				<span>
 					<img
